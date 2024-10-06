@@ -14,7 +14,7 @@ You may assume that all input numbers are nonnegative.*/
   for( let num of numbers){ 
     const remaindar = targetSum - num;
     canSum(remaindar, numbers);
-    if( canSum(remaindar, numbers) === true ) return true; 
+    if( canSum(remaindar, numbers) === true ) return true; // took too long needs optomization
   }
 
   return false;
