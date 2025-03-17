@@ -8,24 +8,22 @@ const SecondLargest = (arr) => {
     if (arr[i] > max) {
       prev = max;
       max = arr[i];
-    }
-
-    else if(arr[i] > prev && arr[i] !== max)
-    {
+    } else if (arr[i] > prev && arr[i] !== max) {
       prev = arr[i];
     }
   }
 
-  if(prev === -Infinity) return -1;
+  if (prev === -Infinity) return -1;
   else return prev;
 };
 
 const secondLargestEnhanced = (arr) => {
-  const max = Math.max(...arr); // Find the maximum value
-  const filteredArr = arr.filter(num => num !== max); // Remove all occurrences of max
+  if (arr.length > 0) {
+    const max = Math.max(...arr); // Find the maximum value
+    const filteredArr = arr.filter((num) => num !== max); // Remove all occurrences of max
 
-  return filteredArr.length > 0 ? Math.max(...filteredArr) : -1; // Find the second max if exists
-}
-
+    return filteredArr.length > 0 ? Math.max(...filteredArr) : -1; // Find the second max if exists
+  } else return -1;
+};
 console.log(SecondLargest(array));
 console.log(secondLargestEnhanced(array));
